@@ -189,16 +189,16 @@ class App:
         button_div["command"] = self.button_div_command
 
         # Button equal (=)
-        button_equal = tk.Button(root)
-        button_equal["bg"] = CTS.BUTTON_TEXT_COLOR_ONCLICK
+        button_dot = tk.Button(root)
+        button_dot["bg"] = CTS.BUTTON_TEXT_COLOR_ONCLICK
         ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
-        button_equal["font"] = ft
-        button_equal["fg"] = CTS.BUTTON_TEXT_COLOR
-        button_equal["justify"] = CTS.BUTTON_JUSTIFY
-        button_equal["text"] = "="
-        button_equal.place(
+        button_dot["font"] = ft
+        button_dot["fg"] = CTS.BUTTON_TEXT_COLOR
+        button_dot["justify"] = CTS.BUTTON_JUSTIFY
+        button_dot["text"] = "."
+        button_dot.place(
             x=210, y=160, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
-        button_equal["command"] = self.button_equal_command
+        button_dot["command"] = self.button_dot_command
 
         # Button clr (clear)
         button_clr = tk.Button(root)
@@ -211,6 +211,18 @@ class App:
         button_clr.place(x=50, y=160, width=CTS.BUTTON_WIDTH,
                          height=CTS.BUTTON_HEIGHT)
         button_clr["command"] = self.button_clr_command
+
+        # Button equal (=)
+        button_eql = tk.Button(root)
+        button_eql["bg"] = CTS.BUTTON_TEXT_COLOR_ONCLICK
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_eql["font"] = ft
+        button_eql["fg"] = CTS.BUTTON_TEXT_COLOR
+        button_eql["justify"] = CTS.BUTTON_JUSTIFY
+        button_eql["text"] = "="
+        button_eql.place(x=50,y=190,
+                    width=CTS.BIG_BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_eql["command"] = self.button_eql_command
 
         # Message window
         # message_window = tk.Message(root)
@@ -280,11 +292,14 @@ class App:
     def button_div_command(self):
         print("Button /")
 
-    def button_equal_command(self):
-        print("Button =")
+    def button_dot_command(self):
+        print("Button .")
 
     def button_clr_command(self):
-        print("Button CLR")
+        print("Button clr")
+
+    def button_eql_command(self):
+        print("Button eql")
 
 
 if __name__ == "__main__":
