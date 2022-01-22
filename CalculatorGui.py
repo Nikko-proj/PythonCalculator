@@ -1,250 +1,255 @@
 import tkinter as tk
 import tkinter.font as tkFont
+import CalcConstants as CTS
 
 class App:
     def __init__(self, root):
-        #setting title
-        root.title("Basic Calculator")
-        #setting window size
-        width=410
-        height=240
+        # setting title
+        root.title("Calculator")
+        # setting window size
+        width = CTS.WINDOW_WIDTH
+        height = CTS.WINDOW_HEIGHT
         screenwidth = root.winfo_screenwidth()
         screenheight = root.winfo_screenheight()
-        alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
+        alignstr = '%dx%d+%d+%d' % (width, height,
+                                    (screenwidth - width) / 2, (screenheight - height) / 2)
         root.geometry(alignstr)
         root.resizable(width=False, height=False)
 
-        GButton_221=tk.Button(root)
-        GButton_221["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_221["font"] = ft
-        GButton_221["fg"] = "#000000"
-        GButton_221["justify"] = "center"
-        GButton_221["text"] = "1"
-        GButton_221.place(x=50,y=70,width=70,height=25)
-        GButton_221["command"] = self.GButton_221_command
+        # Button 1
+        button_1 = tk.Button(root)
+        button_1["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_1["font"] = ft
+        button_1["fg"] = "#000000"
+        button_1["justify"] = CTS.BUTTON_JUSTIFY
+        button_1["text"] = "1"
+        button_1.place(x=50, y=70, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_1["command"] = self.button_1_command
 
-        GButton_778=tk.Button(root)
-        GButton_778["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_778["font"] = ft
-        GButton_778["fg"] = "#000000"
-        GButton_778["justify"] = "center"
-        GButton_778["text"] = "4"
-        GButton_778.place(x=50,y=100,width=70,height=25)
-        GButton_778["command"] = self.GButton_778_command
+        # Button 4
+        button_4 = tk.Button(root)
+        button_4["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_4["font"] = ft
+        button_4["fg"] = "#000000"
+        button_4["justify"] = CTS.BUTTON_JUSTIFY
+        button_4["text"] = "4"
+        button_4.place(x=50, y=100, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_4["command"] = self.button_4_command
 
-        GButton_357=tk.Button(root)
-        GButton_357["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_357["font"] = ft
-        GButton_357["fg"] = "#000000"
-        GButton_357["justify"] = "center"
-        GButton_357["text"] = "7"
-        GButton_357.place(x=50,y=130,width=70,height=25)
-        GButton_357["command"] = self.GButton_357_command
+        # Button 7
+        button_7 = tk.Button(root)
+        button_7["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_7["font"] = ft
+        button_7["fg"] = "#000000"
+        button_7["justify"] = CTS.BUTTON_JUSTIFY
+        button_7["text"] = "7"
+        button_7.place(x=50, y=130, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_7["command"] = self.button_7_command
 
-        GButton_848=tk.Button(root)
-        GButton_848["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_848["font"] = ft
-        GButton_848["fg"] = "#000000"
-        GButton_848["justify"] = "center"
-        GButton_848["text"] = "2"
-        GButton_848.place(x=130,y=70,width=70,height=25)
-        GButton_848["command"] = self.GButton_848_command
+        # Button 2
+        button_2 = tk.Button(root)
+        button_2["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_2["font"] = ft
+        button_2["fg"] = "#000000"
+        button_2["justify"] = CTS.BUTTON_JUSTIFY
+        button_2["text"] = "2"
+        button_2.place(x=130, y=70, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_2["command"] = self.button_2_command
 
-        GButton_390=tk.Button(root)
-        GButton_390["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_390["font"] = ft
-        GButton_390["fg"] = "#000000"
-        GButton_390["justify"] = "center"
-        GButton_390["text"] = "5"
-        GButton_390.place(x=130,y=100,width=70,height=25)
-        GButton_390["command"] = self.GButton_390_command
+        # Button 5
+        button_5 = tk.Button(root)
+        button_5["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_5["font"] = ft
+        button_5["fg"] = "#000000"
+        button_5["justify"] = CTS.BUTTON_JUSTIFY
+        button_5["text"] = "5"
+        button_5.place(x=130, y=100, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_5["command"] = self.button_5_command
 
-        GButton_56=tk.Button(root)
-        GButton_56["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_56["font"] = ft
-        GButton_56["fg"] = "#000000"
-        GButton_56["justify"] = "center"
-        GButton_56["text"] = "8"
-        GButton_56.place(x=130,y=130,width=70,height=25)
-        GButton_56["command"] = self.GButton_56_command
+        # Button 8
+        button_8 = tk.Button(root)
+        button_8["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_8["font"] = ft
+        button_8["fg"] = "#000000"
+        button_8["justify"] = CTS.BUTTON_JUSTIFY
+        button_8["text"] = "8"
+        button_8.place(x=130, y=130, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_8["command"] = self.button_8_command
 
-        GButton_809=tk.Button(root)
-        GButton_809["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_809["font"] = ft
-        GButton_809["fg"] = "#000000"
-        GButton_809["justify"] = "center"
-        GButton_809["text"] = "3"
-        GButton_809.place(x=210,y=70,width=70,height=25)
-        GButton_809["command"] = self.GButton_809_command
+        # Button 3
+        button_3 = tk.Button(root)
+        button_3["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_3["font"] = ft
+        button_3["fg"] = "#000000"
+        button_3["justify"] = CTS.BUTTON_JUSTIFY
+        button_3["text"] = "3"
+        button_3.place(x=210, y=70, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_3["command"] = self.button_3_command
 
-        GButton_803=tk.Button(root)
-        GButton_803["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_803["font"] = ft
-        GButton_803["fg"] = "#000000"
-        GButton_803["justify"] = "center"
-        GButton_803["text"] = "6"
-        GButton_803.place(x=210,y=100,width=70,height=25)
-        GButton_803["command"] = self.GButton_803_command
+        # Button 6
+        button_6 = tk.Button(root)
+        button_6["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_6["font"] = ft
+        button_6["fg"] = "#000000"
+        button_6["justify"] = CTS.BUTTON_JUSTIFY
+        button_6["text"] = "6"
+        button_6.place(x=210, y=100, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_6["command"] = self.button_6_command
 
-        GButton_585=tk.Button(root)
-        GButton_585["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_585["font"] = ft
-        GButton_585["fg"] = "#000000"
-        GButton_585["justify"] = "center"
-        GButton_585["text"] = "9"
-        GButton_585.place(x=210,y=130,width=70,height=25)
-        GButton_585["command"] = self.GButton_585_command
+        # Button 9
+        button_9 = tk.Button(root)
+        button_9["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_9["font"] = ft
+        button_9["fg"] = "#000000"
+        button_9["justify"] = CTS.BUTTON_JUSTIFY
+        button_9["text"] = "9"
+        button_9.place(x=210, y=130, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_9["command"] = self.button_9_command
 
-        GButton_450=tk.Button(root)
-        GButton_450["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_450["font"] = ft
-        GButton_450["fg"] = "#000000"
-        GButton_450["justify"] = "center"
-        GButton_450["text"] = "0"
-        GButton_450.place(x=130,y=160,width=70,height=25)
-        GButton_450["command"] = self.GButton_450_command
+        # Button 0
+        button_0 = tk.Button(root)
+        button_0["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_0["font"] = ft
+        button_0["fg"] = "#000000"
+        button_0["justify"] = CTS.BUTTON_JUSTIFY
+        button_0["text"] = "0"
+        button_0.place(x=130, y=160, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_0["command"] = self.button_0_command
 
-        GButton_51=tk.Button(root)
-        GButton_51["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_51["font"] = ft
-        GButton_51["fg"] = "#000000"
-        GButton_51["justify"] = "center"
-        GButton_51["text"] = "+"
-        GButton_51.place(x=290,y=70,width=70,height=25)
-        GButton_51["command"] = self.GButton_51_command
+        # Button plus (+)
+        button_plus = tk.Button(root)
+        button_plus["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_plus["font"] = ft
+        button_plus["fg"] = "#000000"
+        button_plus["justify"] = CTS.BUTTON_JUSTIFY
+        button_plus["text"] = "+"
+        button_plus.place(x=290, y=70, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_plus["command"] = self.button_plus_command
 
-        GButton_486=tk.Button(root)
-        GButton_486["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_486["font"] = ft
-        GButton_486["fg"] = "#000000"
-        GButton_486["justify"] = "center"
-        GButton_486["text"] = "-"
-        GButton_486.place(x=290,y=100,width=70,height=25)
-        GButton_486["command"] = self.GButton_486_command
+        # Button minus (-)
+        button_minus = tk.Button(root)
+        button_minus["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_minus["font"] = ft
+        button_minus["fg"] = "#000000"
+        button_minus["justify"] = CTS.BUTTON_JUSTIFY
+        button_minus["text"] = "-"
+        button_minus.place(x=290, y=100, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_minus["command"] = self.button_minus_command
 
-        GButton_875=tk.Button(root)
-        GButton_875["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_875["font"] = ft
-        GButton_875["fg"] = "#000000"
-        GButton_875["justify"] = "center"
-        GButton_875["text"] = "*"
-        GButton_875.place(x=290,y=130,width=70,height=25)
-        GButton_875["command"] = self.GButton_875_command
+        # Button mult (*)
+        button_mult = tk.Button(root)
+        button_mult["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_mult["font"] = ft
+        button_mult["fg"] = "#000000"
+        button_mult["justify"] = CTS.BUTTON_JUSTIFY
+        button_mult["text"] = "*"
+        button_mult.place(x=290, y=130, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_mult["command"] = self.button_mult_command
 
-        GButton_958=tk.Button(root)
-        GButton_958["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_958["font"] = ft
-        GButton_958["fg"] = "#000000"
-        GButton_958["justify"] = "center"
-        GButton_958["text"] = "/"
-        GButton_958.place(x=290,y=160,width=70,height=25)
-        GButton_958["command"] = self.GButton_958_command
+        # Button div (/)
+        button_div = tk.Button(root)
+        button_div["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_div["font"] = ft
+        button_div["fg"] = "#000000"
+        button_div["justify"] = CTS.BUTTON_JUSTIFY
+        button_div["text"] = "/"
+        button_div.place(x=290, y=160, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_div["command"] = self.button_div_command
 
-        GButton_882=tk.Button(root)
-        GButton_882["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_882["font"] = ft
-        GButton_882["fg"] = "#000000"
-        GButton_882["justify"] = "center"
-        GButton_882["text"] = "="
-        GButton_882.place(x=210,y=160,width=70,height=25)
-        GButton_882["command"] = self.GButton_882_command
+        # Button equal (=)
+        button_equal = tk.Button(root)
+        button_equal["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_equal["font"] = ft
+        button_equal["fg"] = "#000000"
+        button_equal["justify"] = CTS.BUTTON_JUSTIFY
+        button_equal["text"] = "="
+        button_equal.place(x=210, y=160, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_equal["command"] = self.button_equal_command
 
-        GButton_558=tk.Button(root)
-        GButton_558["bg"] = "#efefef"
-        ft = tkFont.Font(family='Times',size=10)
-        GButton_558["font"] = ft
-        GButton_558["fg"] = "#000000"
-        GButton_558["justify"] = "center"
-        GButton_558["text"] = "Clear"
-        GButton_558.place(x=50,y=160,width=70,height=25)
-        GButton_558["command"] = self.GButton_558_command
+        # Button clr (clear)
+        button_clr = tk.Button(root)
+        button_clr["bg"] = "#efefef"
+        ft = tkFont.Font(family=CTS.BUTTON_FONT, size=CTS.BUTTON_FONT_SIZE)
+        button_clr["font"] = ft
+        button_clr["fg"] = "#000000"
+        button_clr["justify"] = CTS.BUTTON_JUSTIFY
+        button_clr["text"] = "Clear"
+        button_clr.place(x=50, y=160, width=CTS.BUTTON_WIDTH, height=CTS.BUTTON_HEIGHT)
+        button_clr["command"] = self.button_clr_command
 
-        GMessage_55=tk.Message(root)
-        ft = tkFont.Font(family='Times',size=10)
-        GMessage_55["font"] = ft
-        GMessage_55["fg"] = "#333333"
-        GMessage_55["justify"] = "right"
-        GMessage_55["text"] = "Message"
-        GMessage_55["relief"] = "ridge"
-        GMessage_55.place(x=50,y=10,width=310,height=55)
+        # Message window
+        message_window = tk.Message(root)
+        ft = tkFont.Font(family=CTS.WINDOW_WIDGET_FONT, size=CTS.WINDOW_WIDGET_FONT_SIZE)
+        message_window["font"] = ft
+        message_window["fg"] = "#333333"
+        message_window["justify"] = CTS.WINDOW_WIDGET_JUSTIFY
+        message_window["text"] = "Message"
+        message_window["relief"] = "ridge"
+        message_window.place(x=50, y=10, width=CTS.WINDOW_WIDGET_WIDTH, height=CTS.WINDOW_WIDGET_HEIGHT)
 
-    def GButton_221_command(self):
-        print("command")
+    def button_1_command(self):
+        print("Button 1")
 
+    def button_4_command(self):
+        print("Button 4")
 
-    def GButton_778_command(self):
-        print("command")
+    def button_7_command(self):
+        print("Button 7")
 
+    def button_2_command(self):
+        print("Button 2")
 
-    def GButton_357_command(self):
-        print("command")
+    def button_5_command(self):
+        print("Button 5")
 
+    def button_8_command(self):
+        print("Button 8")
 
-    def GButton_848_command(self):
-        print("command")
+    def button_3_command(self):
+        print("Button 3")
 
+    def button_6_command(self):
+        print("Button 6")
 
-    def GButton_390_command(self):
-        print("command")
+    def button_9_command(self):
+        print("Button 9")
 
+    def button_0_command(self):
+        print("Button 0")
 
-    def GButton_56_command(self):
-        print("command")
+    def button_plus_command(self):
+        print("Button +")
 
+    def button_minus_command(self):
+        print("Button -")
 
-    def GButton_809_command(self):
-        print("command")
+    def button_mult_command(self):
+        print("Button *")
 
+    def button_div_command(self):
+        print("Button /")
 
-    def GButton_803_command(self):
-        print("command")
+    def button_equal_command(self):
+        print("Button =")
 
+    def button_clr_command(self):
+        print("Button CLR")
 
-    def GButton_585_command(self):
-        print("command")
-
-
-    def GButton_450_command(self):
-        print("command")
-
-
-    def GButton_51_command(self):
-        print("command")
-
-
-    def GButton_486_command(self):
-        print("command")
-
-
-    def GButton_875_command(self):
-        print("command")
-
-
-    def GButton_958_command(self):
-        print("command")
-
-
-    def GButton_882_command(self):
-        print("command")
-
-
-    def GButton_558_command(self):
-        print("command")
 
 if __name__ == "__main__":
     root = tk.Tk()
